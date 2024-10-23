@@ -30,13 +30,13 @@ module "route53" {
 }
 
 # Create an alias to point the cloudfront cdn to our domain name.
-module "alias" {
-  source = "./Modules/alias"
-  domain_name = var.domain_name
-  cloudfront_domain_name = module.cloudfront.cloudfront_domain_name
-  cloudfront-zone-id = module.cloudfront.cloudfront_hosted-zone_id
-  depends_on = [ module.cloudfront ]
-}
+# module "alias" {
+#   source = "./Modules/alias"
+#   domain_name = var.domain_name
+#   cloudfront_domain_name = module.cloudfront.cloudfront_domain_name
+#   cloudfront-zone-id = module.cloudfront.cloudfront_hosted-zone_id
+#   depends_on = [ module.cloudfront ]
+# }
 
 # Run terraform apply --target module.certificate first
 # Then run terraform apply to build the rest.
